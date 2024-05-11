@@ -1,0 +1,14 @@
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\bin\Debug\net8.0\PokemonAPI.DAL.deps.json
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\bin\Debug\net8.0\PokemonAPI.DAL.runtimeconfig.json
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\bin\Debug\net8.0\PokemonAPI.DAL.dll
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\bin\Debug\net8.0\PokemonAPI.DAL.pdb
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\PokemonAPI.DAL.csproj.AssemblyReference.cache
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\PokemonAPI.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\PokemonAPI.DAL.AssemblyInfoInputs.cache
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\PokemonAPI.DAL.AssemblyInfo.cs
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\PokemonAPI.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\PokemonAPI.DAL.dll
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\refint\PokemonAPI.DAL.dll
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\PokemonAPI.DAL.pdb
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\PokemonAPI.DAL.genruntimeconfig.cache
+C:\Users\Клим\Desktop\study\oris\ORIS2-dev\ORIS2-dev\PokemonAPI\PokemonAPI.DAL\obj\Debug\net8.0\ref\PokemonAPI.DAL.dll

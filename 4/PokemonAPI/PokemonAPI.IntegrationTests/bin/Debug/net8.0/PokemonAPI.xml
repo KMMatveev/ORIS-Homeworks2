@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PokemonAPI</name>
+    </assembly>
+    <members>
+        <member name="T:PokemonAPI.Common.Mappings.AssemblyMappingProfile">
+            <summary>
+            Assembly Mapping Profile for Mapping
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Common.Mappings.AssemblyMappingProfile.#ctor(System.Reflection.Assembly)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="assembly">Assembly of proj</param>
+        </member>
+        <member name="T:PokemonAPI.Common.Mappings.IMapWith`1">
+            <summary>
+            Responsible for Mapp object to other
+            </summary>
+            <typeparam name="T">Mapping With T</typeparam>
+        </member>
+        <member name="M:PokemonAPI.Common.Mappings.IMapWith`1.Mapping(AutoMapper.Profile)">
+            <summary>
+            Mapping from one object to other
+            </summary>
+            <param name="profile">Profile</param>
+        </member>
+        <member name="T:PokemonAPI.Controllers.AbilityController">
+            <summary>
+            CRUD Controller of Entity Ability
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Controllers.AbilityController.#ctor(AutoMapper.IMapper,PokemonAPI.DAL.Repositories.IRepository{PokemonAPI.DAL.Entities.Ability,System.Guid})">
+            <inheritdoc cref="T:PokemonAPI.Controllers.CrudBaseController`5"/>
+        </member>
+        <member name="T:PokemonAPI.Controllers.BreedingController">
+            <summary>
+            CRUD Controller of Entity Breeding
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Controllers.BreedingController.#ctor(AutoMapper.IMapper,PokemonAPI.DAL.Repositories.IRepository{PokemonAPI.DAL.Entities.Breeding,System.Guid})">
+            <inheritdoc cref="T:PokemonAPI.Controllers.CrudBaseController`5"/>
+        </member>
+        <member name="T:PokemonAPI.Controllers.CrudBaseController`5">
+            <summary>
+            Base CRUD Controller of DB Entities
+            </summary>
+            <typeparam name="TEntity">Entity in DB</typeparam>
+            <typeparam name="TKey">Entity Primary Key</typeparam>
+            <typeparam name="TCreateDto">Create DTO</typeparam>
+            <typeparam name="TUpdateDto">Update DTO</typeparam>
+            <typeparam name="TReadDto">Read DTO</typeparam>
+        </member>
+        <member name="F:PokemonAPI.Controllers.CrudBaseController`5.Mapper">
+            <summary>
+            Mapper
+            </summary>
+        </member>
+        <member name="F:PokemonAPI.Controllers.CrudBaseController`5.Repository">
+            <summary>
+            Repository of Entity
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Controllers.CrudBaseController`5.#ctor(AutoMapper.IMapper,PokemonAPI.DAL.Repositories.IRepository{`0,`1})">
+            <summary>
+            Constructor with services for CRUD
+            </summary>
+            <param name="mapper"><see cref="T:AutoMapper.IMapper"/></param>
+            <param name="repository"><see cref="T:PokemonAPI.DAL.Repositories.IRepository`2"/></param>
+        </member>
+        <member name="M:PokemonAPI.Controllers.CrudBaseController`5.Create(`2,System.Threading.CancellationToken)">
+            <summary>
+            Create Entity
+            </summary>
+            <param name="createDto">Create DTO</param>
+            <param name="cancellationToken"></param>
+            <returns>ID of created Entity</returns>
+        </member>
+        <member name="M:PokemonAPI.Controllers.CrudBaseController`5.Read(`1,System.Threading.CancellationToken)">
+            <summary>
+             Read Entity
+            </summary>
+            <param name="id">ID of Entity</param>
+            <param name="cancellationToken"></param>
+            <returns>TReadDTO</returns>
+        </member>
+        <member name="M:PokemonAPI.Controllers.CrudBaseController`5.Update(`3,System.Threading.CancellationToken)">
+            <summary>
+            Update Entity
+            </summary>
+            <param name="updateDto">Update DTO</param>
+            <param name="cancellationToken"></param>
+            <returns>ID of updated entity</returns>
+        </member>
+        <member name="M:PokemonAPI.Controllers.CrudBaseController`5.Delete(`1,System.Threading.CancellationToken)">
+            <summary>
+            Delete Entity
+            </summary>
+            <param name="id">Id of entity</param>
+            <param name="cancellationToken"></param>
+            <returns>ID of deleted entity</returns>
+        </member>
+        <member name="T:PokemonAPI.Controllers.MoveController">
+            <summary>
+            CRUD Controller of Entity Move
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Controllers.MoveController.#ctor(AutoMapper.IMapper,PokemonAPI.DAL.Repositories.IRepository{PokemonAPI.DAL.Entities.Move,System.Guid})">
+            <inheritdoc cref="T:PokemonAPI.Controllers.CrudBaseController`5"/>
+        </member>
+        <member name="T:PokemonAPI.Controllers.PokemonController">
+            <summary>
+            The controller is responsible for the return of Pokemon
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Controllers.PokemonController.#ctor(PokemonAPI.Interfaces.IPokeApiService,AutoMapper.IMapper,PokemonAPI.DAL.Repositories.IRepository{PokemonAPI.DAL.Entities.Pokemon,System.Int32})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="pokeApiService">IPokeApiService</param>
+            <param name="mapper">IMapper</param>
+            <param name="pokemonRepository">IRepository{TEntity, TKey}</param>
+            <inheritdoc cref="T:PokemonAPI.Controllers.CrudBaseController`5"/>
+        </member>
+        <member name="M:PokemonAPI.Controllers.PokemonController.GetPokemonByIdOrName(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns Details Pokemon
+            </summary>
+            <param name="pokemonSearchParameter">Name or Id of pokemon</param>
+            <param name="cancellationToken"></param>
+            <returns>DetailsPokemonDto</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:PokemonAPI.Controllers.PokemonController.GetPokemonsByFilter(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Returns pokemons list on specific page by name which includes search
+            </summary>
+            <param name="search">A part of pokemon name</param>
+            <param name="pokemonsCount">Number of pokemons list result length</param>
+            <param name="pageNumber">Number of pokemons page</param>
+            <param name="cancellationToken"></param>
+            <returns>Pokemons list with length = pokemonsCount on page = pageNumber by name which includes search</returns>
+        </member>
+        <member name="M:PokemonAPI.Controllers.PokemonController.GetAllPokemons(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Returns all pokemons list on specific page
+            </summary>
+            <param name="pokemonsCount">Number of pokemons list result length</param>
+            <param name="pageNumber">Number of pokemons page</param>
+            <param name="cancellationToken"></param>
+            <returns>Pokemons list with length = pokemonsCount on page = pageNumber</returns>
+        </member>
+        <member name="T:PokemonAPI.Controllers.StatController">
+            <summary>
+            CRUD Controller of Entity Stat
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Controllers.StatController.#ctor(AutoMapper.IMapper,PokemonAPI.DAL.Repositories.IRepository{PokemonAPI.DAL.Entities.Stat,System.Guid})">
+            <inheritdoc cref="T:PokemonAPI.Controllers.CrudBaseController`5"/>
+        </member>
+        <member name="T:PokemonAPI.Controllers.TypeController">
+            <summary>
+             CRUD Controller of Entity Ability
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Controllers.TypeController.#ctor(AutoMapper.IMapper,PokemonAPI.DAL.Repositories.IRepository{PokemonAPI.DAL.Entities.Type,System.Guid})">
+            <inheritdoc cref="T:PokemonAPI.Controllers.CrudBaseController`5"/>
+        </member>
+        <member name="T:PokemonAPI.Exceptions.PokemonNotFoundException">
+            <summary>
+            If pokemon not was found
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Exceptions.PokemonNotFoundException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:PokemonAPI.Extensions.QueryableFilterExtension">
+            <summary>
+            Extension for filtering Queryable Collection of Pokemons
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Extensions.QueryableFilterExtension.GetFilteredPokemonsIdAsync(System.Linq.IQueryable{PokemonAPI.DAL.Entities.Pokemon},System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Filtering DbSet{Pokemons} and converts it to List with {pokemonsNumber} pokemons on {page} page
+            </summary>
+            <param name="pokemons">DbSet{Pokemons}</param>
+            <param name="filter">Key name of filtering</param>
+            <param name="count">Count of pokemons</param>
+            <param name="page">Count of page</param>
+            <param name="cancellationToken"></param>
+            <returns>List with filtering pokemons</returns>
+        </member>
+        <member name="T:PokemonAPI.Handlers.ExceptionHandler">
+            <summary>
+            Сlass responsible for handling exceptions
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Handlers.ExceptionHandler.HandleAsync(System.Exception,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Responsible for handling exceptions
+            </summary>
+            <param name="exception">Exception</param>
+            <param name="context">HttpContext</param>
+        </member>
+        <member name="T:PokemonAPI.Interfaces.IPokeApiService">
+            <summary>
+            Responsible for returns the pokemons from pokeAPI
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Interfaces.IPokeApiService.GetPokemonIdAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns pokemon by fullName or id
+            </summary>
+            <param name="pokemonSearchParameter">Name or Id</param>
+            <param name="cancellationToken"></param>
+            <returns>Pokemon</returns>
+            <exception cref="T:System.ArgumentException">If pokemonSearchParameter is null or white space</exception>
+        </member>
+        <member name="M:PokemonAPI.Interfaces.IPokeApiService.GetPokemonsIdByFilterAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Returns pokemons count pokemons on page number page with names which includes search value
+            </summary>
+            <param name="searchValue">A part of pokemon name</param>
+            <param name="pokemonsCount">Count of pokemons</param>
+            <param name="pageNumber">Page number</param>
+            <param name="cancellationToken"></param>
+            <returns>Pokemons List with name which includes searchValue</returns>
+        </member>
+        <member name="M:PokemonAPI.Interfaces.IPokeApiService.GetAllPokemonsIdAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Returns pokemons count pokemons on page number page
+            </summary>
+            <param name="pokemonsCount">Count of pokemons</param>
+            <param name="pageNumber">Page number</param>
+            <param name="cancellationToken"></param>
+            <returns>Pokemons List</returns>
+        </member>
+        <member name="T:PokemonAPI.Middlewares.ExceptionMiddleware">
+            <summary>
+            Middleware which responsible for Exception Handling
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Middlewares.ExceptionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Http.RequestDelegate)">
+            <inheritdoc />
+        </member>
+        <member name="P:PokemonAPI.Models.DTOs.Pokemon.DetailsReadPokemonDto.Height">
+            <summary>
+            Pokemon Height in decimeters
+            </summary>
+        </member>
+        <member name="P:PokemonAPI.Models.DTOs.Pokemon.DetailsReadPokemonDto.Weight">
+            <summary>
+            Pokemon weight in kilograms
+            </summary>
+        </member>
+        <member name="P:PokemonAPI.Models.DTOs.Pokemon.DetailsReadPokemonDto.Abilities">
+            <summary>
+            Pokemon abilities list
+            </summary>
+        </member>
+        <member name="P:PokemonAPI.Models.DTOs.Pokemon.DetailsReadPokemonDto.Moves">
+            <summary>
+            Pokemon Moves List
+            </summary>
+        </member>
+        <member name="P:PokemonAPI.Models.DTOs.Pokemon.DetailsReadPokemonDto.Stats">
+            <summary>
+            Pokemon Stats List
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Models.DTOs.Pokemon.DetailsReadPokemonDto.Mapping(AutoMapper.Profile)">
+            <inheritdoc />
+        </member>
+        <member name="P:PokemonAPI.Models.DTOs.Pokemon.ReadPokemonDto.Id">
+            <summary>
+            Pokemon Id
+            </summary>
+        </member>
+        <member name="P:PokemonAPI.Models.DTOs.Pokemon.ReadPokemonDto.Name">
+            <summary>
+            Pokemon Name
+            </summary>
+        </member>
+        <member name="P:PokemonAPI.Models.DTOs.Pokemon.ReadPokemonDto.ImageUrl">
+            <summary>
+            Pokemon image url
+            </summary>
+        </member>
+        <member name="P:PokemonAPI.Models.DTOs.Pokemon.ReadPokemonDto.Types">
+            <summary>
+            Pokemon Types List
+            </summary>
+        </member>
+        <member name="P:PokemonAPI.Models.Properties.DtosProperties.StatDto.StatName">
+            <summary>
+            Pokemon Stat Name
+            </summary>
+        </member>
+        <member name="P:PokemonAPI.Models.Properties.DtosProperties.StatDto.StatValue">
+            <summary>
+            Pokemon Stat Value
+            </summary>
+        </member>
+        <member name="T:PokemonAPI.Services.PokeApiService">
+            <summary>
+            Responsible for returns the pokemons from pokeAPI
+            </summary>
+        </member>
+        <member name="M:PokemonAPI.Services.PokeApiService.#ctor(PokemonAPI.DAL.IDbContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbContext">Database Context</param>
+        </member>
+        <member name="M:PokemonAPI.Services.PokeApiService.GetPokemonIdAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns pokemon by fullName or id
+            </summary>
+            <param name="pokemonSearchParameter">Name or Id</param>
+            <param name="cancellationToken"></param>
+            <returns>Pokemon</returns>
+            <exception cref="T:System.ArgumentException">If pokemonSearchParameter is null or white space</exception>
+        </member>
+        <member name="M:PokemonAPI.Services.PokeApiService.GetPokemonsIdByFilterAsync(System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Returns pokemons count pokemons on page number page with names which includes search value
+            </summary>
+            <param name="searchValue">A part of pokemon name</param>
+            <param name="pokemonsCount">Count of pokemons</param>
+            <param name="pageNumber">Page number</param>
+            <param name="cancellationToken"></param>
+            <returns>Pokemons List with name which includes searchValue</returns>
+        </member>
+        <member name="M:PokemonAPI.Services.PokeApiService.GetAllPokemonsIdAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Returns pokemons count pokemons on page number page
+            </summary>
+            <param name="pokemonsCount">Count of pokemons</param>
+            <param name="pageNumber">Page number</param>
+            <param name="cancellationToken"></param>
+            <returns>Pokemons List</returns>
+        </member>
+    </members>
+</doc>
